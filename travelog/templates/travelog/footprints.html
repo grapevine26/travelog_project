@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/footprints.css' %}">
+        <style>
+        #image_div {
+            background: url("{% static 'image/han.jpg' %}") no-repeat center -150px !important;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div>
+        {% include 'travelog/header.html' %}
+    </div>
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

@@ -1,0 +1,106 @@
+/* 콘텐츠 영역 */
+#cont_top {
+    text-align: center;
+}
+.intro {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    color: dimgrey;
+    line-height: 2.0;
+}
+.hrLine {
+    border: 0;
+    height: 2px;
+    width: 90%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(100, 163, 247, 0.75), rgba(0, 0, 0, 0));
+    margin-bottom: 50px;
+}
+#select_div {
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+}
+.select_category {
+    width: 180px;
+}
+.select_category .menuLink {
+    text-decoration: none;
+    color: rgb(126, 126, 126);
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+.select_category .menuLink:hover {
+    color: black;
+}
+.contline {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    align-content: center;
+}
+/* 글 미리보기 감싸는 태그 */
+#view {
+    margin: 15px;
+    padding-bottom: 15px;
+    box-shadow: 0px 10px 20px 2px rgb(216, 216, 216);
+    width: 300px;
+    height: 480px;
+}
+/* 글 미리보기 : 이미지 */
+.pht {
+    position: relative;
+    width: 299px;
+    height: 299px;
+    overflow: hidden;
+}
+.square {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    right: -9999px;
+    bottom: -9999px;
+    margin: auto;
+    height: 300px;
+}
+.text {
+    padding: 10px;
+}
+/* 글 제목, 내용 묶는 %태그 */
+.title {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 20px;
+}
+.info_div {
+    display: flex;
+    padding-bottom: 20px;
+}
+.icon_cal {
+    padding-right: 10px;
+}
+.info_text {
+    padding-top: 7px;
+    padding-right: 25px;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+.icon_comment {
+    padding-top: 1px;
+    padding-right: 10px;
+}
+.prev {
+    width: 280px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+}
+.nav_div {
+    margin-top: 100px;
+}

@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <style>
+        #image_div {
+            background-image: url("{% static 'image/gwanganli.jpg' %}");
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    {% include 'travelog/header.html' %}
+
+    <!-- content 내부 영역 -->
+    <div>
+        <div class="title">
+            Login
+        </div>
+        <div>
+            <hr class="hr_divide"/>
+        </div>
+        <div class="flex_cont">
+            <div class="log_box">
+                <div class="log_flex">
+                    <div class="log_txt">
+                        ID
+                    </div>
+                    <input class="box" type="text" name="id"/>
+                </div>
+                <div class="log_flex">
+                    <div class="log_txt">
+                        PW
+                    </div>
+                    <input class="box" type="password" name="password"/>
+                </div>
+            </div>
+            <div class="log_btn">
+                <button type="button" onclick="location.href='#'" class="login">Login</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

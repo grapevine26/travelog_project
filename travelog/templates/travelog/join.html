@@ -1,0 +1,66 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/join.css' %}">
+        <style>
+        #image_div {
+            background-image: url("{% static 'image/gwanganli.jpg' %}");
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    {% include 'travelog/header.html' %}
+    <!-- content 내부 영역 -->
+    <div>
+        <div class="title">
+            Join Form
+        </div>
+        <div>
+            <hr class="hr_divide"/>
+        </div>
+        <div class="explain">
+            Thanks for joining to our blog!<br/>
+            You can recieve letters and newses just after joining to us.<br/>
+            Just fill the short informations and join to our journey!
+        </div>
+        <div class="join_box">
+            <div class="join_flex">
+                <div class="join_txt">
+                    ID
+                </div>
+                <input class="box" type="text" name="id"/>
+            </div>
+            <div class="join_flex">
+                <div class="join_txt">
+                    Password
+                </div>
+                <input class="box" type="password" name="password"/>
+            </div>
+            <div class="join_flex">
+                <div class="join_txt">
+                    Name
+                </div>
+                <input class="box" type="text" name="id"/>
+            </div>
+            <div class="join_flex">
+                <div class="join_txt">
+                    E-mail
+                </div>
+                <input class="box" type="email" name="id"/>
+            </div>
+            <div class="flex_bottom">
+                <div class="explain_bottom">
+                    Are you ready to join us?
+                </div>
+                <div class="join_btn">
+                    <button type="button" onclick="location.href='#'" class="join">Join!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

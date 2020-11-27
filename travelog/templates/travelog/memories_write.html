@@ -1,0 +1,95 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block css %}
+    {% load bootstrap4 %}       {# import bootstrap4/bootstrap3 #}
+    {% bootstrap_css %}         {# Embed Bootstrap CSS #}
+    {% bootstrap_javascript jquery='full' %}  {# Embed Bootstrap JS+jQuery #}
+    {{ form.media }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/write_form.css' %}">
+    <style>
+        #image_div {
+            background-image: url("{% static 'image/gwanganli.jpg' %}")
+        }
+
+        label {
+            display: none;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    {% include 'travelog/header.html' %}
+
+    <div class="content">
+        <div class="write_content">
+            <form method="post">
+                {% csrf_token %}
+                <div class="text_category">
+                    Title
+                </div>
+                {{ form.title }}
+                <div class="text_category">
+                    Date
+                </div>
+                <div class="date_flex">
+                    <div class="text_date">
+                        From
+                    </div>
+                    <div class='input-group date'>
+                        {{ form.first_date }}
+                    </div>
+                    <div class="text_date_bar">-</div>
+                    <div class="text_date">
+                        To
+                    </div>
+                    <div class='input-group date'>
+                        {{ form.last_date }}
+                    </div>
+                </div>
+
+                <div class="text_category">
+                    Location
+                </div>
+                {{ form.location }}
+
+                <div class="text_category">
+                    Route
+                </div>
+                {{ form.route }}
+                <div id="counter_m">(0 / 최대 200자)</div>
+
+                <div class="text_category">
+                    Contents
+                </div>
+                {{ form.content }}
+
+                <div>
+                    <button type="submit" class="add_btn">
+                        <svg width="25px" height="25px" viewBox="2 -3 16 16" class="bi bi-plus" fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg>
+                        Add Post
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+
+        $('.textarea_medium').keyup(function (e) {
+            var content = $(this).val();
+            $('#counter_m').html("(" + content.length + " / 최대 200자)");
+
+            if (content.length > 200) {
+                alert("최대 200자까지 입력 가능합니다.");
+                $(this).val(content.substring(0, 200));
+                $('#counter_m').html("(200 / 최대 200자)");
+            }
+        });
+    </script>
+{% endblock %}

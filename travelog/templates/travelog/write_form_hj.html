@@ -1,0 +1,302 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/commons' %}">
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>so & jun Blog Mainassa</title>
+
+  <link rel="stylesheet" type="text/css" href="/css/commons.css">
+  <link rel="stylesheet" type="text/css" href="/css/write_form.css">
+
+  <!-- 제이쿼리 -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+  <!-- 부트스트랩 -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+  <!-- 데이트 피커 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.4/js/bootstrap-datetimepicker.min.js"
+    integrity="sha512-r/mHP22LKVhxWFlvCpzqMUT4dWScZc6WRhBMVUQh+SdofvvM1BS1Hdcy94XVOod7QqQMRjLQn5w/AQOfXTPvVA=="
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.4/css/bootstrap-datetimepicker.min.css"
+    integrity="sha512-ve3HkfDj0yuNfwMyOMoyva1kd6FO3N07Ypbz4YEOnGLOScyYu719khU1yGdX9iUR4oyVT6p0jfcRbVWefwRmvg=="
+    crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment-with-locales.min.js"></script>
+
+  <!-- 써머노트 -->
+  <script src="/css/js/summernote/summernote-lite.js"></script>
+  <script src="/css/js/summernote/lang/summernote-ko-KR.js"></script>
+  <link rel="stylesheet" href="/css/summernote/summernote-lite.css">
+
+  <style>
+    .add_btn {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      height: 40px;
+      width: 150px;
+      background-color: white;
+      color: rgb(124, 124, 124);
+      border: rgb(150, 150, 150) 1px solid;
+      border-radius: 10px;
+    }
+
+    .add_btn:focus {
+      outline: none;
+    }
+
+    .add_summernote {
+      display: none;
+    }
+
+    .date_flex {
+      display: flex;
+      margin-top: 5px;
+      margin-bottom: 30px;
+    }
+
+    .text_date {
+      margin-left: 4px;
+      font-family: 'Noto Sans KR', 'Quicksand', sans-serif;
+      font-size: 17px;
+      color: rgb(148, 148, 148);
+      padding-right: 15px;
+    }
+
+    #fromDate {
+      margin-right: 15px;
+      padding-left: 15px;
+      height: 32px;
+      width: 180px;
+      color: rgb(163, 162, 162);
+      border: rgb(150, 150, 150) 1px solid;
+      border-radius: 10px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 14px;
+    }
+
+    #fromDate:focus {
+      outline: none;
+    }
+
+    #toDate {
+      margin-right: 15px;
+      padding-left: 15px;
+      height: 32px;
+      width: 180px;
+      color: rgb(163, 162, 162);
+      border: rgb(150, 150, 150) 1px solid;
+      border-radius: 10px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 14px;
+    }
+
+    #toDate:focus {
+      outline: none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- 상단부를 감싸는 div 태그 -->
+  <div id="top_div">
+    <div id="image_div">
+      <!-- 상단 바 영역 -->
+      <div id="flex">
+        <div id="logo">
+          <a href="main.html"><img src="/image/mainlogo.png" height="40px" /></a>
+        </div>
+        <div id="topMenu">
+          <ul>
+            <li><a class="menuLink" href="who_are_we.html">WHO ARE WE?</a></li>
+            <li><a class="menuLink" href="memories.html">MEMORIES</a></li>
+            <li><a class="menuLink" href="footprints.html">FOOT PRINTS</a></li>
+            <li><a class="menuLink" href="tips.html">TIPS</a></li>
+            <li><a class="menuLink" href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+        <div>
+          <div id="login_join">
+            <button type="button" onclick="location.href='login.html'" class="button">Login</button>
+            <button type="button" onclick="location.href='join.html'" class="button">Join</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="write_content">
+      <form method="post">
+
+        <div class="text_category">
+          Title
+        </div>
+        <input class="text_area" size="117px" type="text" name="title" placeholder="포스트의 제목을 입력하세요."
+          required="required" />
+
+        <div class="text_category">
+          Date
+        </div>
+        <div class="date_flex">
+          <div>
+
+          </div>
+          <div class="text_date">
+            From
+          </div>
+          <div class='input-group date'>
+            <input type='text' class="form-control datetimepicker1" />
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+          <div class="text_date">-</div>
+
+          <div class="text_date">
+            To
+          </div>
+          <div class='input-group date'>
+            <input type='text' class="form-control datetimepicker2" />
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+        </div>
+
+        <div class="text_category">
+          Location
+        </div>
+        <input class="text_area" size="117px" type="text" name="title" placeholder="여행 장소를 위치를 적어주세요."
+          required="required" />
+
+        <div class="text_category">
+          Route
+        </div>
+        <textarea class="textarea_medium" rows="4" cols="117" name="route" placeholder="여행 장소까지 가는 방법을 공유해주세요."
+          required="required"></textarea>
+        <div id="counter_m">(0 / 최대 200자)</div>
+
+        <div class="binding">
+          <div class="guide_icon">
+            <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+              <path fill-rule="evenodd"
+                d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </div>
+          <div class="guide">
+            이제 아래에 포스팅 하고 싶은 장소에 대한 소개를 작성해주세요!<br />
+            <b>Add Place</b> 버튼을 누르면 여러 장소를 소개할 수 있습니다.
+          </div>
+        </div>
+
+        <div class="place">
+          <div class="text_category">
+            Place Title
+          </div>
+          <input class="text_area" size="117px" type="text" name="placeTitle" placeholder="소개할 장소는 어디인가요?"
+            required="required" />
+
+          <div class="text_category">
+            Place Info
+          </div>
+          <textarea id="summernote" name="editordata" required="required"></textarea>
+        </div>
+
+        <div class="add_icon">
+          <button type="button" class="add_btn">
+            <svg width="25px" height="25px" viewBox="0 1 16 16" class="bi bi-plus" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+            </svg>
+            Add Place
+          </button>
+        </div>
+
+
+        <input class="submit_btn" type="submit" value="FINISH" />
+      </form>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $('#summernote').summernote({
+        height: 700,
+        width: 900,
+        minHeight: null,
+        maxHeight: null,
+        focus: true,
+        lang: "ko-KR",
+        placeholder: '내용을 입력해주세요.'
+      });
+    });
+
+    $('.textarea_medium').keyup(function (e) {
+      var content = $(this).val();
+      $('#counter_m').html("(" + content.length + " / 최대 200자)");
+
+      if (content.length > 200) {
+        alert("최대 200자까지 입력 가능합니다.");
+        $(this).val(content.substring(0, 200));
+        $('#counter_m').html("(200 / 최대 200자)");
+      }
+    });
+
+    $('.add_btn').click(function () {
+      $('.place').append('<hr style="margin: 70px 0;"/>'
+        + $('.place').html())
+    });
+    $('.datetimepicker1').datetimepicker({
+      icons: {
+        time: "fa fa-clock-o",
+        date: "fa fa-calendar",
+        up: "fa fa-chevron-up",
+        down: "fa fa-chevron-down",
+        previous: 'fa fa-chevron-left',
+        next: 'fa fa-chevron-right',
+        today: 'fa fa-screenshot',
+        clear: 'fa fa-trash',
+        close: 'fa fa-remove'
+      }
+    });
+    $('.datetimepicker2').datetimepicker({
+      icons: {
+        time: "fa fa-clock-o",
+        date: "fa fa-calendar",
+        up: "fa fa-chevron-up",
+        down: "fa fa-chevron-down",
+        previous: 'fa fa-chevron-left',
+        next: 'fa fa-chevron-right',
+        today: 'fa fa-screenshot',
+        clear: 'fa fa-trash',
+        close: 'fa fa-remove'
+      }
+
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+
+/* 콘텐츠 영역 */
+#cont {
+    padding: 30px;
+}
+
+/* 글 제목 */
+.title {
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 45px;
+    width: 900px;
+    height: 120px;
+}
+/* 날짜 등 정보 */
+.info {
+    margin: auto;
+    padding-left: 30px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    width: 900px;
+}
+/* 제목부분 내용부분 구분하는 hr 구분선 */
+.hr_divide {
+    padding-top: 1px;
+    border: 0;
+    height: 2px;
+    width: 74%;
+    background-image: linear-gradient(to right, rgba(104, 101, 101, 0), rgba(193, 198, 206, 0.75), rgba(0, 0, 0, 0));
+}
+/* 글 내용 */
+.text {
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    font-family: 'Noto Sans KR', 'Quicksand', sans-serif;
+    font-size: 16px;
+    width: 900px;
+}
+.text_title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Noto Sans KR', 'Quicksand', sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+    color: lightslategray;
+}
+.text_content {
+    padding-top: 10px;
+    padding-bottom: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Noto Sans KR', 'Quicksand', sans-serif;
+    font-size: 16px;
+    line-height: 200%;
+    word-spacing: 2px;
+}
+.img {
+    padding-left: 20px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    height: 500px;
+}
+.img_in {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    height: 500px;
+}
+.place_title {
+    padding-top: 50px;
+    padding-left: 20px;
+    font-family: 'Noto Sans KR', 'Quicksand', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    color: rgb(134, 134, 134);
+    display: flex;
+}
+.title_icon {
+    padding-right: 20px;
+}
+.title_text {
+    padding-top: 1px;
+}
+.place_location {
+    padding-left: 20px;
+    font-size: 15px;
+}
+.place_text {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.nav_div {
+    margin-top: 100px;
+}

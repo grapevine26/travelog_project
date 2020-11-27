@@ -1,0 +1,186 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tips.css' %}">
+    <style>
+        #image_div {
+            background-image: url("{% static 'image/younjiPark.jpg' %}")
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div>
+        {% include 'travelog/header.html' %}
+        <div>
+            <div id="cont_top" style="padding-top: 120px">
+                Free Tips for your trip!<br/>
+                Totally free, take everything you need before making plans!<br/>
+            </div>
+
+            <div>
+                <hr class="hrLine"/>
+            </div>
+
+            <div class="bind_all">
+                <div class="title">
+                    Accomodation
+                </div>
+                <div class="bind">
+
+                    <div class="one_block">
+                        <a class="one_link" href="#">
+                            <div class="check_img">
+                                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check2-square"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                    <path fill-rule="evenodd"
+                                          d="M1.5 13A1.5 1.5 0 0 0 3 14.5h10a1.5 1.5 0 0 0 1.5-1.5V8a.5.5 0 0 0-1 0v5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 3v10z"/>
+                                </svg>
+                            </div>
+                            <div class="tip_title">
+                                Airbnb
+                            </div>
+                            <div class="tip_txt">
+                                Want to know how to book awsome accomodations in Korea? Click here and get some tips!
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="one_block">
+                        <a class="one_link" href="#">
+                            <div class="check_img">
+                                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check2-square"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                    <path fill-rule="evenodd"
+                                          d="M1.5 13A1.5 1.5 0 0 0 3 14.5h10a1.5 1.5 0 0 0 1.5-1.5V8a.5.5 0 0 0-1 0v5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 3v10z"/>
+                                </svg>
+                            </div>
+                            <div class="tip_title">
+                                Yanolja
+                            </div>
+                            <div class="tip_txt">
+                                You will perfectly know how to use Korean accomodation app. Find local accomodations via
+                                this application!
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <hr class="hrLine"/>
+                </div>
+
+                <div class="title">
+                    Public Transportation
+                </div>
+                <div class="bind">
+
+                    <div class="one_block">
+                        <a class="one_link" href="#">
+                            <div class="check_img">
+                                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check2-square"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                    <path fill-rule="evenodd"
+                                          d="M1.5 13A1.5 1.5 0 0 0 3 14.5h10a1.5 1.5 0 0 0 1.5-1.5V8a.5.5 0 0 0-1 0v5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 3v10z"/>
+                                </svg>
+                            </div>
+                            <div class="tip_title">
+                                Transfer System
+                            </div>
+                            <div class="tip_txt">
+                                We note every single tips about Transfer system! Get some tips how to save money with
+                                this, then you can buy one more soju :>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="one_block">
+                        <a class="one_link" href="#">
+                            <div class="check_img">
+                                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check2-square"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                    <path fill-rule="evenodd"
+                                          d="M1.5 13A1.5 1.5 0 0 0 3 14.5h10a1.5 1.5 0 0 0 1.5-1.5V8a.5.5 0 0 0-1 0v5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 3v10z"/>
+                                </svg>
+                            </div>
+                            <div class="tip_title">
+                                Public Bicycle
+                            </div>
+                            <div class="tip_txt">
+                                Everyone can use Korea's public bicycle rental system if you have your cell phone and
+                                wifi or data!
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <hr class="hrLine"/>
+                </div>
+
+                <div class="title">
+                    Restaurants
+                </div>
+                <div class="bind">
+
+                    <div class="one_block">
+                        <a class="one_link" href="#">
+                            <div class="check_img">
+                                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check2-square"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                    <path fill-rule="evenodd"
+                                          d="M1.5 13A1.5 1.5 0 0 0 3 14.5h10a1.5 1.5 0 0 0 1.5-1.5V8a.5.5 0 0 0-1 0v5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 3v10z"/>
+                                </svg>
+                            </div>
+                            <div class="tip_title">
+                                Local Restaurants
+                            </div>
+                            <div class="tip_txt">
+                                We noteded some local restaurants where we been or we know. Delicious foods will make
+                                your journey better!
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="one_block">
+                        <a class="one_link" href="#">
+                            <div class="check_img">
+                                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check2-square"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                    <path fill-rule="evenodd"
+                                          d="M1.5 13A1.5 1.5 0 0 0 3 14.5h10a1.5 1.5 0 0 0 1.5-1.5V8a.5.5 0 0 0-1 0v5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 3v10z"/>
+                                </svg>
+                            </div>
+                            <div class="tip_title">
+                                Street foods
+                            </div>
+                            <div class="tip_txt">
+                                It's officially famous but sometimes it's too adventure to try new foods. Check some
+                                street foods and try what you want!
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

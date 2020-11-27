@@ -1,0 +1,104 @@
+
+.hrLine {
+    border: 0;
+    height: 2px;
+    width: 80%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(100, 163, 247, 0.75), rgba(0, 0, 0, 0));
+    text-align: center;
+}
+#cont {
+    padding: 30px;
+}
+#cont_top {
+    padding: 100px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    color: dimgrey;
+    line-height: 2.0;
+
+}
+/* 사진, 내용을 묶는 태그 */
+#both_intro {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+}
+.intro_div {
+    width: 500px;
+    height: 600px;
+    padding-top: 50px;
+    text-align: center;
+}
+.text_left {
+    width: 500px;
+    height: 600px;
+    padding-top: 50px;
+    text-align: left;
+    font-family: 'Quicksand', sans-serif;
+}
+.mini_title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 700;
+    color: lightslategray;
+}
+.mini_cont {
+    font-size: 16px;
+    line-height: 1.8;
+    word-spacing: 1.1px;
+}
+.profile {
+    vertical-align: middle;
+    height: 500px;
+    line-height: 1.2%;
+}
+
+#both_intro_individual {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+}
+.text_left_individual {
+    width: 500px;
+    height: 500px;
+    padding-top: 50px;
+    text-align: left;
+    font-family: 'Quicksand', sans-serif;
+}
+.intro_div_individual {
+    padding-top: 20px;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+}
+.profile_individual {
+    vertical-align: middle;
+    height: 400px;
+    line-height: 1.2%;
+}
+.mini_cont_individual {
+    font-size: 16px;
+    line-height: 1.8;
+    word-spacing: 1.1px;
+    padding-bottom: 20px;
+}
+.contact_div {
+    display: flex;
+}
+.icon_mail {
+    color: rgb(64, 169, 255);
+    padding-right: 12px;
+}
+.contact_text {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    padding-top: 2px;
+    padding-right: 30px;
+    color: dimgrey;
+}

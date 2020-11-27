@@ -1,0 +1,150 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/whoarewe.css' %}">
+    <style>
+        #image_div {
+            background-image: url("{% static 'image/suroview.jpg' %}")
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div>
+        {% include 'travelog/header.html' %}
+        <div id="cont">
+            <div id="cont_top">
+                Do you want to know more Who Are WE?<br/>
+                We'll let you know more, so follow us!
+            </div>
+
+            <div>
+                <hr class="hrLine"/>
+            </div>
+
+            <div id="both_intro">
+                <div class="intro_div">
+                    <img class="profile" src="{% static 'image/both_profile.jpg' %}"/>
+                </div>
+                <div class="text_left">
+                    <div class="mini_title">
+                        Looking for real local travel spots?
+                    </div>
+                    <div class="mini_cont">
+                        Hello! We are just starting to make a little trips.<br/>
+                        Travel makes our life free, relax and be motivated again. We just step into the world,
+                        especially in South Korea, our home country.<br/>
+                        If you are interesting in travel to Korea, our beautiful country, look around our posts and
+                        tips!<br/>
+                        We posted famous travel spots, photo spots and of course some quiet & calm places for chilling
+                        in Korea at "Memories". Also you can check places by the city so take a look and find your dream
+                        place to feel the gorgeous country Korea!<br/>
+                        Maybe you can't find perfect place what you looking for, so subscribe or follow our
+                        sns(instagram)! Everytime we go new places let you know most first!<br/>
+                        If you want to know more about us or curious about places we went, don't hesitate just contact
+                        to us feel free!
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <hr class="hrLine"/>
+            </div>
+
+            <div id="both_intro_individual">
+                <div class="intro_div_individual">
+                    <img class="profile_individual" src="{% static 'image/heidi.jpg' %}"/>
+                </div>
+                <div class="text_left_individual">
+                    <div class="mini_title">
+                        Heidi Sohyeon Jeon
+                    </div>
+                    <div class="mini_cont_individual">
+                        Hey there! It's glad that you found our page!<br/>
+                        I'm begginger programmer and travel lover.<br/>
+                        Lived all my life in Seoul, Korea and I've been to Western Australia during half of the year. If
+                        you interesting to my travel places and tips, contact to my instagram or gmail.<br/>
+                        If you want to do some coorporation with us, feel free to contact!
+                    </div>
+                    <div class="contact_div">
+                        <div class="icon_mail">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope" fill="currentColor"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+                            </svg>
+                        </div>
+                        <div class="contact_text">
+                            heidish005@gmail.com
+                        </div>
+                        <div class="icon_mail">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star" fill="currentColor"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                            </svg>
+                        </div>
+                        <div class="contact_text">
+                            b2._.llllll
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <hr class="hrLine"/>
+            </div>
+
+            <div id="both_intro_individual">
+                <div class="intro_div_individual">
+                    <img class="profile_individual" src="{% static 'image/leo.jpg' %}"/>
+                </div>
+                <div class="text_left_individual">
+                    <div class="mini_title">
+                        Leo Hyeokjun Choi
+                    </div>
+                    <div class="mini_cont_individual">
+                        Hello! Thanks finding our page!<br/>
+                        I'm junior programmer can handle front-back both.<br/>
+                        Develpoing myself to stack my career normal days, and finding gorgeous places where can motivate
+                        myself during holidays!<br/>
+                        And thinking I'm such a good photographer too.<br/>
+                        If you liked our posts, tips and photos please subscribe our page or follow on instagram to get
+                        some news constantly<br/>
+                        Also if you interesting to do work with us, contact free to us!
+                    </div>
+                    <div class="contact_div">
+                        <div class="icon_mail">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope" fill="currentColor"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+                            </svg>
+                        </div>
+                        <div class="contact_text">
+                            yifi1004@gmail.com
+                        </div>
+                        <div class="icon_mail">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star" fill="currentColor"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                            </svg>
+                        </div>
+                        <div class="contact_text">
+                            hj.vw
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+    <style>
+        #image_div {
+            background-image: url("{% static 'image/han.jpg' %}");
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div>
+        {% include 'travelog/header.html' %}
+        <!-- content 내부 영역 -->
+        <div id="cont">
+            <div id="cont_top">
+                We always granting your opinions and advice etc!<br/><br/>
+                If you want to recieve news mails about our travles and travel tips,<br/>
+                Let us know you are interesting ;)<br/><br/>
+                Always welcome travel lover, even if you really don't travel a lot.<br/>
+                Don't hesitate freinds!
+            </div>
+
+            <div>
+                <hr class="hrLine"/>
+            </div>
+
+            <div class="bind_all">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="top_contact">
+                                <div class="title_contact">
+                                    Contact Form
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="left_contact">
+                                <form>
+                                    <br/><br/><br/>
+
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputEmail3">
+                                        </div>
+                                    </div>
+
+                                    <br/>
+
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="inputEmail3">
+                                        </div>
+                                    </div>
+
+                                    <br/>
+
+                                    <fieldset class="form-group">
+                                        <div class="row">
+                                            <legend class="col-form-label col-sm-2 pt-0">Recieving..</legend>
+                                            <div class="col-sm-10">
+                                                <div class="font_plus">
+                                                    <div class="form-check">
+                                                        <input type="radio" name="check"/>&nbsp;Only "Memories" Posts
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input type="radio" name="check"/>&nbsp;Only "Tips" Posts
+                                                    </div>
+                                                    <div class="form-check disabled">
+                                                        <input type="radio" name="check"/>&nbsp;Both "Memories & Tips"
+                                                        Posts
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <br/>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-10">
+                                            <button type="button" class="btn btn-outline-secondary">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="right_contact">
+                                <div class="image_contact">
+                                    <img class="square" src="{% static 'image/nodeul.jpg' %}" alt=""/>
+                                </div>
+                                <div class="image_info">
+                                    Nodeul Island Located under the the Hangangdaegyo Bridge
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

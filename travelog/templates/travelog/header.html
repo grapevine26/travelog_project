@@ -1,0 +1,27 @@
+{% load static %}
+<div id="top_div">
+    <div id="image_div">
+        <div id="flex">
+            <div id="logo">
+                <a href="{% url 'main' %}">
+                    <img src="{% static 'image/mainlogo.png' %}" alt="" height="40px"/>
+                </a>
+            </div>
+            <div id="topMenu">
+                <ul>
+                    <li><a class="menuLink" href="{% url 'who_are_we' %}">WHO ARE WE?</a></li>
+                    <li><a class="menuLink" href="{% url 'memories' %}">MEMORIES</a></li>
+                    <li><a class="menuLink" href="{% url 'footprints' %}">FOOT PRINTS</a></li>
+                    <li><a class="menuLink" href="{% url 'tips' %}">TIPS</a></li>
+                    <li><a class="menuLink" href="{% url 'contact' %}">CONTACT</a></li>
+                </ul>
+            </div>
+            <div>
+                <div id="login_join">
+                    <button type="button" onclick="location.href='login'" class="button">Login</button>
+                    <button type="button" onclick="location.href='join'" class="button">Join</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

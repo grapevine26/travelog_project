@@ -1,0 +1,42 @@
+/* 중앙 (배경) 사진 */
+
+
+/* 중앙 로고 */
+#contentlogo {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    align-content: center;
+}
+
+/* footer 영역을 감싸는 div */
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: gainsboro;
+}
+/* footer : 한 사람 정보를 감싸는 div */
+.person {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    align-content: center;
+    padding-top: 1px;
+}
+.name {
+    font-weight: bold;
+    font-family: Georgia;
+    font-size: 13px;
+    color: dimgrey;
+    text-align: center;
+    padding-top: 10px;
+    padding-right: 50px;
+    
+}
+.icon_mail {
+    padding-top: 8px;
+    padding-right: 10px;
+    color: dimgrey;
+}
