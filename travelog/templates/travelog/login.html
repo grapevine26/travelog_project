@@ -22,23 +22,26 @@
             <hr class="hr_divide"/>
         </div>
         <div class="flex_cont">
-            <div class="log_box">
-                <div class="log_flex">
-                    <div class="log_txt">
-                        ID
+            <form method="POST">
+                {% csrf_token %}
+                <div class="log_box">
+                    <div class="log_flex">
+                        <div class="log_txt">
+                            ID
+                        </div>
+                        {{ form.username }}
                     </div>
-                    <input class="box" type="text" name="id"/>
-                </div>
-                <div class="log_flex">
-                    <div class="log_txt">
-                        PW
+                    <div class="log_flex">
+                        <div class="log_txt">
+                            PW
+                        </div>
+                        {{ form.password }}
                     </div>
-                    <input class="box" type="password" name="password"/>
                 </div>
-            </div>
-            <div class="log_btn">
-                <button type="button" onclick="location.href='#'" class="login">Login</button>
-            </div>
+                <div class="log_btn">
+                    <button type="submit" class="login">Login</button>
+                </div>
+            </form>
         </div>
     </div>
 {% endblock %}

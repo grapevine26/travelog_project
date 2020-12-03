@@ -3,7 +3,7 @@
 
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/join.css' %}">
-        <style>
+    <style>
         #image_div {
             background-image: url("{% static 'image/gwanganli.jpg' %}");
         }
@@ -12,7 +12,6 @@
 
 {% block content %}
     {% include 'travelog/header.html' %}
-    <!-- content 내부 영역 -->
     <div>
         <div class="title">
             Join Form
@@ -26,38 +25,48 @@
             Just fill the short informations and join to our journey!
         </div>
         <div class="join_box">
-            <div class="join_flex">
-                <div class="join_txt">
-                    ID
+            <form method="POST">
+                {% csrf_token %}
+{#                <div class="join_flex">#}
+{#                    <div class="join_txt">#}
+{#                        ID#}
+{#                    </div>#}
+{#                    {{ form.username }}#}
+{#                </div>#}
+{#                <div class="join_flex">#}
+{#                    <div class="join_txt">#}
+{#                        Password1#}
+{#                    </div>#}
+{#                    {{ form.password1 }}#}
+{#                </div>#}
+{#                <div class="join_flex">#}
+{#                    <div class="join_txt">#}
+{#                        Password2#}
+{#                    </div>#}
+{#                    {{ form.password2 }}#}
+{#                </div>#}
+{#                <div class="join_flex">#}
+{#                    <div class="join_txt">#}
+{#                        Name#}
+{#                    </div>#}
+{#                    {{ form.nickname }}#}
+{#                </div>#}
+{#                <div class="join_flex">#}
+{#                    <div class="join_txt">#}
+{#                        E-mail#}
+{#                    </div>#}
+{#                    {{ form.email }}#}
+{#                </div>#}
+                {{ form.as_p }}
+                <div class="flex_bottom">
+                    <div class="explain_bottom">
+                        Are you ready to join us?
+                    </div>
+                    <div class="join_btn">
+                        <button type="submit" class="join">Join!</button>
+                    </div>
                 </div>
-                <input class="box" type="text" name="id"/>
-            </div>
-            <div class="join_flex">
-                <div class="join_txt">
-                    Password
-                </div>
-                <input class="box" type="password" name="password"/>
-            </div>
-            <div class="join_flex">
-                <div class="join_txt">
-                    Name
-                </div>
-                <input class="box" type="text" name="id"/>
-            </div>
-            <div class="join_flex">
-                <div class="join_txt">
-                    E-mail
-                </div>
-                <input class="box" type="email" name="id"/>
-            </div>
-            <div class="flex_bottom">
-                <div class="explain_bottom">
-                    Are you ready to join us?
-                </div>
-                <div class="join_btn">
-                    <button type="button" onclick="location.href='#'" class="join">Join!</button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 {% endblock %}

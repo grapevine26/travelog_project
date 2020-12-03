@@ -14,18 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from .views import *
 
 urlpatterns = [
     path('', Main.as_view(), name='main'),
-    path('join', Join.as_view(), name='join'),
-    path('login', Login.as_view(), name='login'),
-    path('who_are_we', WhoAreWe.as_view(), name='who_are_we'),
-    path('memories', Memories.as_view(), name='memories'),
-    path('memories_detail', MemoriesDetail.as_view(), name='memories_detail'),
-    path('memories_write', MemoriesWrite.as_view(), name='memories_write'),
-    path('footprints', FootPrints.as_view(), name='footprints'),
-    path('tips', Tips.as_view(), name='tips'),
-    path('contact', Contact.as_view(), name='contact'),
+    path('join/', Join.as_view(), name='join'),
+    path('login/', Login.as_view(), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('who_are_we/', WhoAreWe.as_view(), name='who_are_we'),
+    path('memories/', Memories.as_view(), name='memories'),
+    path('memories_detail/<pk>/', MemoriesDetail.as_view(), name='memories_detail'),
+    path('memories_detail/<pk>/edit', MemoriesUpdate.as_view(), name='memories_update'),
+    path('memories_write/', MemoriesWrite.as_view(), name='memories_write'),
+    path('footprints/', FootPrints.as_view(), name='footprints'),
+    path('tips/', Tips.as_view(), name='tips'),
+    path('contact/', Contact.as_view(), name='contact'),
+
+
 ]

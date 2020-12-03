@@ -1,9 +1,10 @@
 {% extends 'base/base.html' %}
 {% load static %}
+{% load custom_tags %}
 
 {% block css %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/memories.css' %}">
-        <style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/memories.css' %}">
+    <style>
         #image_div {
             background-image: url("{% static 'image/hanriver.jpg' %}")
         }
@@ -12,13 +13,13 @@
 
 {% block content %}
     <div>
- {% include 'travelog/header.html' %}
+        {% include 'travelog/header.html' %}
         <!-- content 내부 영역 -->
         <div>
             <!-- content 상단 카테고리 선택 영역 -->
             <div id="cont_top">
                 <div class="intro">
-                    Heidi & Leo 's Unforgettable Memories<br />
+                    Heidi & Leo 's Unforgettable Memories<br/>
                 </div>
                 <div>
                     <hr class="hrLine"/>
@@ -40,62 +41,103 @@
         <div style="margin-top: 250px;">
             <div class="container">
                 <div class="row row-cols-3">
-
-                    <div class="col">
-                        <div id="view">
-                            <div class="pht">
-                                <a href="{% url 'memories_detail' %}">
-                                    <img class="square" src="/image/bonglidangil.jpg" />
-                                </a>
-                            </div>
-                            <div class="text">
-                                <p class="title">
-                                    봉리단길
-                                </p>
-                                <div class="info_div">
-                                    <div class="icon_cal">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-week" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                                            <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="info_text">
-                                        Sept 26, 2020
-                                    </div>
-                                    <div class="icon_comment">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M2 1h12a1 1 0 0 1 1 1v11.586l-2-2A2 2 0 0 0 11.586 11H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="info_text">
-                                        4
-                                    </div>
+                    {% for object in object_list %}
+                        <div class="col">
+                            <div class="view" onclick="location.href = '{% url 'memories_detail' object.pk %}'"
+                                 style="cursor: pointer">
+                                <div class="pht">
+                                    <a href="{% url 'memories_detail' object.pk %}">
+                                        <img class="square" src="{{ object.content|first_picture }}" alt=""/>
+                                    </a>
                                 </div>
-                                <div class="prev">
-                                    김해의 봉황동에서 젊은층 사이에 떠오르고 있는 봉리단길. 고즈넉한 골목길 사이에서 느낌있는 카페를 찾아내는 재미가 쏠쏠하다.
+                                <div class="text">
+                                    <p class="title">
+                                        {{ object.title }}
+                                    </p>
+                                    <div class="info_div">
+                                        <div class="icon_cal">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                 class="bi bi-calendar-week" fill="currentColor"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd"
+                                                      d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                                                <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="info_text">
+                                            {{ object.created_at }}
+                                        </div>
+                                        {#                                    댓글부분 #}
+                                        {#                                    <div class="icon_comment">#}
+                                        {#                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">#}
+                                        {#                                            <path fill-rule="evenodd" d="M2 1h12a1 1 0 0 1 1 1v11.586l-2-2A2 2 0 0 0 11.586 11H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>#}
+                                        {#                                        </svg>#}
+                                        {#                                    </div>#}
+                                        {#                                    <div class="info_text">#}
+                                        {#                                        4#}
+                                        {#                                    </div>#}
+                                    </div>
+                                    <div class="prev">
+                                        {{ object.content|first_sentence }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+                    {% endfor %}
                 </div>
             </div>
 
             <div class="nav_div">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                        </li>
-                        <li class="page-item"><a style="color: grey;" class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a style="color: grey;" class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a style="color: grey;" class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a style="color: grey;" class="page-link" href="#">Next</a>
-                        </li>
+                        {% if page_obj.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" tabindex="-1" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                            </li>
+                        {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                        {% endif %}
+                        {% for i in paginator.page_range %}
+                            {% if page_obj.number == i %}
+                                <li class="page-item"><a style="color: royalblue; font-weight: bold" class="page-link" href="#">1</a></li>
+                            {% else %}
+                                <li class="page-item"><a style="color: grey;" class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a style="color: grey;" class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                            </li>
+                        {% else %}
+                            <li class="page-item disabled">
+                                <a style="color: grey;" class="page-link" href="#">Next</a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </nav>
             </div>
+
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in paginator.page_range %}
+                    {% if page_obj.number == i %}
+                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                    <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
 
 
         </div>
@@ -103,18 +145,12 @@
         <!-- 하단 설정, 글쓰기 영역 -->
         <div class="foot">
             <div class="foot_icon">
-                <a class="foot_link" href="#">
-                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-gear" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"/>
-                        <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"/>
-                    </svg>
-                </a>
-            </div>
-            <div class="foot_icon">
                 <a class="foot_link" href="{% url 'memories_write' %}">
-                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                        <path fill-rule="evenodd"
+                              d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                     </svg>
                 </a>
             </div>

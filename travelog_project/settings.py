@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'travelog',
         'USER': 'root',
         'PASSWORD': '1234',
-        'HOST': '172.30.1.208',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4'
@@ -131,6 +131,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 AUTH_USER_MODEL = 'travelog.User'
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '../../'
+LOGOUT_REDIRECT_URL = '/'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 

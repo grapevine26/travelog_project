@@ -27,10 +27,18 @@
             </ul>
         </div>
         <div>
-            <div id="login_join">
-                <button type="button" onclick="location.href='login'" class="button">Login</button>
-                <button type="button" onclick="location.href='join'" class="button">Join</button>
-            </div>
+            {% if not user.is_authenticated %}
+                <div id="login_join">
+                    <button type="button" onclick="location.href='login'" class="button">Login</button>
+                    <button type="button" onclick="location.href='join'" class="button">Join</button>
+                </div>
+            {% else %}
+                <div id="login_join">
+                    <button type="button" class="button"
+                            onclick="location.href='{% url 'logout' %}'">{{ user.nickname }}'s
+                    </button>
+                </div>
+            {% endif %}
         </div>
     </div>
 

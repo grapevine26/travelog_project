@@ -5,8 +5,7 @@ from django_summernote.models import AbstractAttachment
 
 # Create your models here.
 class User(AbstractUser):
-    nickname = models.CharField(max_length=20, null=False, unique=True)
-    gender = models.CharField(max_length=1, null=False)
+    nickname = models.CharField(max_length=20, null=False)
 
 
 class Post(models.Model):
